@@ -1,9 +1,9 @@
 spring:
-datasource:
-driver-class-name: com.mysql.jdbc.Driver
-url: jdbc:mysql://101.132.39.73:3306/travelsys?serverTimezone=UTC&characterEncoding=UTF8
-username: root
-password: qfjava
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://101.132.39.73:3306/yuemei?serverTimezone=UTC&characterEncoding=UTF8
+    username: root
+    password: qfjava
 mybatis:
-type-aliases-package: com.pinming.travelapp.pojo
-mapper-locations: classpath*:/mapper/*.xml
+  type-aliases-package: com.pinming.travelapp.pojo
+  mapper-locations: classpath*:/mapper/*.xml
