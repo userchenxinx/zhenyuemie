@@ -15,7 +15,6 @@ public class Cosmetics {
     private String details;
     private String discount;
     private String img;
-    private String brand;
     private String effect;
     private String skintype;
     private int typeId;
@@ -92,13 +91,6 @@ public class Cosmetics {
         this.img = img;
     }
 
-    public String getBrand() {
-        return brand;
-    }
-
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
 
     public String getEffect() {
         return effect;
