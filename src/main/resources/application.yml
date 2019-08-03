@@ -4,6 +4,14 @@ spring:
     url: jdbc:mysql://101.132.39.73:3306/yuemei?serverTimezone=UTC&characterEncoding=UTF8
     username: root
     password: qfjava
+  mvc:
+      view:
+        prefix: /WEB-INF/views/
+        suffix: .html
+      server:
+          port: 8080
 mybatis:
-  type-aliases-package: com.pinming.travelapp.pojo
+  type-aliases-package: com.pinming.pojo
   mapper-locations: classpath*:/mapper/*.xml
+
+
