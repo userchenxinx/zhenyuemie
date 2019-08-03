@@ -28,7 +28,7 @@ public class CosmeticsServerImpl implements CosmeticsServer {
     @Override
     public VPageInfo<Cosmetics> findByPage(int page, Integer type, String info) {
 
-        VPageInfo<Cosmetics>pageInfo = new VPageInfo<>();
+        VPageInfo<Cosmetics> pageInfo = new VPageInfo<>();
         pageInfo.setCurrentPage(page);
 
         //设置总页数
@@ -43,8 +43,8 @@ public class CosmeticsServerImpl implements CosmeticsServer {
         pageInfo.setTotalPage(totalPage);
 
         //设置当前查询到的数据
-        int indedx = (page - 1) * pageInfo.getPageSize();
-        List<Cosmetics> list = cosmeticsMapper.findByIndexAndSize(indedx, pageInfo.getPageSize(), type, info);
+        int index = (page - 1) * pageInfo.getPageSize();
+        List<Cosmetics> list = cosmeticsMapper.findByIndexAndSize(index, pageInfo.getPageSize(), type, info);
         pageInfo.setInfos(list);
 
 
