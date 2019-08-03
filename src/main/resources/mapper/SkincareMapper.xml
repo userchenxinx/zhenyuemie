@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pinming.mapper.SkincareMapper">
+    <select id="findBySizeAndIndex" parameterType="map" resultType="com.pinming.pojo.Skincare">
+        select * from skincare limit #{index}, #{size}
+    </select>
+
+    <select id="count" resultType="int" parameterType="map">
+        select count(*) from skincare
+    </select>
+
+    <select id="findById" parameterType="int" resultType="com.pinming.pojo.Skincare">
+        select name,price,img from skincare where id=#{id}
+    </select>
+</mapper>

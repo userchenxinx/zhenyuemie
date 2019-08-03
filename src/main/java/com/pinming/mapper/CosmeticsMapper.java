@@ -18,6 +18,14 @@ public interface CosmeticsMapper {
      * @return
      */
     public List<Cosmetics> findByIndexAndSize(@Param("index") int index, @Param("size") int size,
+
                                               @Param("type") Integer type, @Param("info") String info);
+
+    /**
+     * 计算页数
+     * @param type
+     * @param info
+     * @return
+     */
     public int count(@Param("type") Integer type, @Param("info") String info);
 }

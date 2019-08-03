@@ -4,7 +4,7 @@ package com.pinming.pojo;
  * @author: jie
  * @create: 2019-08-01 17:02
  **/
-public class Cosmetics {
+public class Skincare {
 
     private int id;
     private String name;
