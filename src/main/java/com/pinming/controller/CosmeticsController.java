@@ -3,7 +3,7 @@ package com.pinming.controller;
 import com.pinming.common.util.JsonBean;
 import com.pinming.common.util.VPageInfo;
 import com.pinming.pojo.Cosmetics;
-import com.pinming.service.CosmeticsServer;
+import com.pinming.service.CosmeticsServce;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class CosmeticsController {
 
     @Autowired
-    CosmeticsServer cosmeticsServer;
+    CosmeticsServce cosmeticsServer;
 
     @RequestMapping(value = "/list.do", method = RequestMethod.GET)
     public JsonBean findByPage(int page, Integer type, String info){

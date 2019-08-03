@@ -3,7 +3,7 @@ package com.pinming.service.impl;
 import com.pinming.common.util.VPageInfo;
 import com.pinming.mapper.CosmeticsMapper;
 import com.pinming.pojo.Cosmetics;
-import com.pinming.service.CosmeticsServer;
+import com.pinming.service.CosmeticsServce;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +14,7 @@ import java.util.List;
  * @create: 2019-08-01 19:58
  **/
 @Service
-public class CosmeticsServerImpl implements CosmeticsServer {
+public class CosmeticsServerImpl implements CosmeticsServce {
 
     @Autowired
     CosmeticsMapper cosmeticsMapper;
