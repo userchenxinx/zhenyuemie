@@ -17,6 +17,8 @@ public interface MshopdetaMapper {
     List<Mshopdeta> findAllShop();
     // 根据ftype的id展示商品
     List<MshopTyptV> selectTypeId (int id);
+
     // 根据更新时间进行排序
 
+    List<Mshopdeta> findByType(String goodsname);
 }

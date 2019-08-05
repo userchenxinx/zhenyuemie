@@ -53,4 +53,14 @@ public class ManshopController {
     public R selectAllShop(){
         return manshopService.selectAll();
     }
+
+    @ApiOperation(value = "全文搜索商品")
+    @ResponseBody
+    @GetMapping("/manlist/search.do")
+    public JsonBean findByType(String goodsname, Model model){
+
+        List<Mshopdeta> list = manshopService.findByType(goodsname);
+        model.addAttribute("list",list);
+        return new JsonBean(1,list);
+    }
 }

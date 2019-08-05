@@ -48,4 +48,10 @@ public class ManshopServiceImpl implements ManshopService {
         return R.setOK("OK",list);
     }
 
+    @Override
+    public List<Mshopdeta> findByType(String goodsname) {
+        List<Mshopdeta> list = manshopMapper.findByType(goodsname);
+        return list;
+    }
+
 }
