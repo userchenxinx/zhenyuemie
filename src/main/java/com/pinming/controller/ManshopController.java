@@ -1,14 +1,19 @@
 package com.pinming.controller;
 
+import com.pinming.common.util.JsonBean;
 import com.pinming.common.vo.R;
+import com.pinming.pojo.Mshopdeta;
 import com.pinming.service.ManshopService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.List;
 
 
 @Controller
@@ -47,13 +52,5 @@ public class ManshopController {
     @GetMapping("/manlist/allshop .do")
     public R selectAllShop(){
         return manshopService.selectAll();
-    }
-
-    //查看ftype类型下所有的商品
-    @ApiOperation(value = "展示ftype类型下所有商品",notes = "展示ftype类型下所有商品")
-    @ResponseBody
-    @GetMapping("/manlist/ftypeidlist.do")
-    public R selectTypeId(int id){
-        return manshopService.selectFtypeId(id);
     }
 }
