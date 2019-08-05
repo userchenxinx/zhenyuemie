@@ -1,14 +1,19 @@
 package com.pinming.controller;
 
+import com.pinming.common.util.JsonBean;
 import com.pinming.common.vo.R;
+import com.pinming.pojo.Mshopdeta;
 import com.pinming.service.ManshopService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.List;
 
 
 @Controller
@@ -47,5 +52,15 @@ public class ManshopController {
     @GetMapping("/manlist/allshop .do")
     public R selectAllShop(){
         return manshopService.selectAll();
+    }
+
+    @ApiOperation(value = "全文搜索商品")
+    @ResponseBody
+    @GetMapping("/manlist/search.do")
+    public JsonBean findByType(String goodsname, Model model){
+
+        List<Mshopdeta> list = manshopService.findByType(goodsname);
+        model.addAttribute("list",list);
+        return new JsonBean(1,list);
     }
 }

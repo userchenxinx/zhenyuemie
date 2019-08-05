@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.pinming.mapper.EvaluateMapper">
-  <resultMap id="BaseResultMap" type="com.pinming.pojo.Evaluate">
-    <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="star" jdbcType="INTEGER" property="star" />
-    <result column="evaluate" jdbcType="VARCHAR" property="evaluate" />
-    <result column="evaluateman" jdbcType="VARCHAR" property="evaluateman" />
-    <result column="imgpath" jdbcType="VARCHAR" property="imgpath" />
-    <result column="evaluatetime" jdbcType="TIMESTAMP" property="evaluatetime" />
-  </resultMap>
-  <sql id="Base_Column_List">
-    id, star, evaluate, evaluateman, imgpath, evaluatetime
-  </sql>
 
+  <select id="allEvaluateByGid"  resultType="com.pinming.model.EvaluateVG">
+    SELECT ms.id,e.star,e.evaluate,e.evaluateman,e.imgpath,e.evaluatetime FROM evaluate e
+    INNER JOIN mshopdeta ms
+    on ms.id= e.id
+    where ms.id=#{id}
+  </select>
+  <insert id="addEvaluate" parameterType="com.pinming.pojo.Evaluate" useGeneratedKeys="true" keyProperty="id">
+    insert into evaluate(id,star,evaluate,imgpath,evaluateman,evaluatetime) values (#{id},#{star},#{evaluate},#{imgpath},#{evaluateman},#{evaluatetime})
+  </insert>
 </mapper>
