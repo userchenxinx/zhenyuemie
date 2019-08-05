@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pinming.mapper.MfunctiontypeMapper">
+  <resultMap id="BaseResultMap" type="com.pinming.pojo.Mfunctiontype">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="ftype" jdbcType="VARCHAR" property="ftype" />
+    <result column="goodsname" jdbcType="VARCHAR" property="goodsname" />
+    <result column="mtid" jdbcType="INTEGER" property="mtid" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, ftype, goodsname, mtid
+  </sql>
+
+</mapper>
