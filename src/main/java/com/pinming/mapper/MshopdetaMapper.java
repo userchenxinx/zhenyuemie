@@ -10,6 +10,8 @@ import java.util.List;
 public interface MshopdetaMapper {
     // 根据ftype查看商品
     List<MshopdfVG> findshopByftypeId(int id);
-    // 查看商品详情
+    // 查看根据商品id详情
     List<Mshopdeta> selectById(int id);
+    //查看所有商品
+    List<Mshopdeta> findAllShop();
 }

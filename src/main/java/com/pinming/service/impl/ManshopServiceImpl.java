@@ -41,4 +41,11 @@ public class ManshopServiceImpl implements ManshopService {
         List<Mshopdeta> list = mshopdetaMapper.selectById(id);
         return R.setOK("OK",list);
     }
+
+    @Override
+    public R selectAll() {
+        List<Mshopdeta> list = mshopdetaMapper.findAllShop();
+        return R.setOK("OK",list);
+    }
+
 }

@@ -1,5 +1,7 @@
 package com.pinming.pojo;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Date;
 
 public class Mshopdeta {
@@ -25,6 +27,7 @@ public class Mshopdeta {
 
     private String category;
 
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT-8")
     private Date datetime;
 
     private String imgpath;

@@ -9,4 +9,6 @@ public interface ManshopService {
     R selectByFtypeId(int id);
 
     R selectById(int id);
+
+    R selectAll();
 }

@@ -33,11 +33,19 @@ public class ManshopController {
     public R selectByFtypeid(int id){
         return manshopService.selectByFtypeId(id);
     }
-    //查看商品详情
-    @ApiOperation(value = "查看商品详情",notes = "查看商品详情")
+    //根据商品id查看商品详情
+    @ApiOperation(value = "根据商品id查看商品详情",notes = "根据商品id查看商品详情")
     @ResponseBody
-    @GetMapping("/manlist/shopdeta .do")
+    @GetMapping("/manlist/byshopdetaid .do")
     public R selectById(int id){
         return manshopService.selectById(id);
+    }
+
+    //查看所有商品
+    @ApiOperation(value = "查看所有商品",notes = "查看所有商品")
+    @ResponseBody
+    @GetMapping("/manlist/allshop .do")
+    public R selectAllShop(){
+        return manshopService.selectAll();
     }
 }

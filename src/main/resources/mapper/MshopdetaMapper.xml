@@ -32,4 +32,7 @@
   <select id="selectById" parameterType="java.lang.Integer" resultType="com.pinming.pojo.Mshopdeta">
     select * FROM mshopdeta where id=#{id}
   </select>
+  <select id="findAllShop" parameterType="java.lang.Integer" resultType="com.pinming.pojo.Mshopdeta">
+    select * FROM mshopdeta
+  </select>
 </mapper>
