@@ -56,4 +56,18 @@ public interface CosmeticsMapper {
      * @return
      */
     public List<Cosmetics> findByEfficacytyoeId(int id);
+
+    /**
+     * 通过价格升序展示
+     * @param price
+     * @return
+     */
+    public List<Cosmetics> findAllAsc(Double price);
+
+    /**
+     * 通过价格降序展示
+     * @param price
+     * @return
+     */
+    public List<Cosmetics> findAllDesc(Double price);
 }

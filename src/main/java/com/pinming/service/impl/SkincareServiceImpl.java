@@ -96,4 +96,24 @@ public class SkincareServiceImpl implements SkincareService {
     public List<Skincare> findEfficacytypeById(int id) {
         return skincareMapper.findByEfficacytyoeId(id);
     }
+
+    /**
+     * 通过价格升序展示
+     * @param price
+     * @return
+     */
+    @Override
+    public List<Skincare> findSkincareAsc(Double price) {
+        return skincareMapper.findAllAsc(price);
+    }
+
+    /**
+     * 通过价格降序展示
+     * @param price
+     * @return
+     */
+    @Override
+    public List<Skincare> findSkincareDesc(Double price) {
+        return skincareMapper.findAllDesc(price);
+    }
 }

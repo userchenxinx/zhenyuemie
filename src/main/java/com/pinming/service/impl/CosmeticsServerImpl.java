@@ -91,5 +91,25 @@ public class CosmeticsServerImpl implements CosmeticsServce {
         return cosmeticsMapper.findByEfficacytyoeId(id);
     }
 
+    /**
+     * 通过价格升序展示
+     * @param price
+     * @return
+     */
+    @Override
+    public List<Cosmetics> findSkincareAsc(Double price) {
+        return cosmeticsMapper.findAllAsc(price);
+    }
+
+    /**
+     * 通过价格降序展示
+     * @param price
+     * @return
+     */
+    @Override
+    public List<Cosmetics> findSkincareDesc(Double price) {
+        return cosmeticsMapper.findAllDesc(price);
+    }
+
 
 }
