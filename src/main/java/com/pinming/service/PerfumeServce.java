@@ -32,4 +32,25 @@ public interface PerfumeServce {
      * @return
      */
     public List<Perfume> findSkincareById(int id);
+
+    /**
+     * 通过肤质类型进行查询信息
+     * @param id
+     * @return
+     */
+    public List<Perfume> findSkintypeById(int id);
+
+    /**
+     * 通过品牌类型进行信息查询
+     * @param id
+     * @return
+     */
+    public List<Perfume> findBrandtypeById(int id);
+
+    /**
+     * 通过功效进行查询
+     * @param id
+     * @return
+     */
+    public List<Perfume> findEfficacytypeById(int id);
 }

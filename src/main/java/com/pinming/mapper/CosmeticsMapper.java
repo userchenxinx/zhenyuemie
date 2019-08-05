@@ -35,4 +35,25 @@ public interface CosmeticsMapper {
      * @return
      */
     public List<Cosmetics> findById(int id);
+
+    /**
+     * 通过肤质类型进行查询
+     * @param id
+     * @return
+     */
+    public List<Cosmetics> findBySkintypeId(int id);
+
+    /**
+     * 通过品牌进行信息查询
+     * @param id
+     * @return
+     */
+    public List<Cosmetics> findByBrandtypeId(int id);
+
+    /**
+     * 通过功效进行查询
+     * @param id
+     * @return
+     */
+    public List<Cosmetics> findByEfficacytyoeId(int id);
 }

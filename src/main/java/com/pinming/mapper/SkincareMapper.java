@@ -37,4 +37,25 @@ public interface SkincareMapper {
      * @return
      */
     public List<Skincare> findById(int id);
+
+    /**
+     * 通过肤质类型进行查询
+     * @param id
+     * @return
+     */
+    public List<Skincare> findBySkintypeId(int id);
+
+    /**
+     * 通过品牌进行信息查询
+     * @param id
+     * @return
+     */
+    public List<Skincare> findByBrandtypeId(int id);
+
+    /**
+     * 通过功效进行查询
+     * @param id
+     * @return
+     */
+    public List<Skincare> findByEfficacytyoeId(int id);
 }

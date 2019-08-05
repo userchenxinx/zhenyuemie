@@ -4,14 +4,29 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.pinming.mapper.SkincareMapper">
     <select id="findBySizeAndIndex" parameterType="map" resultType="com.pinming.pojo.Skincare">
-        select * from skincare limit #{index}, #{size}
+        select * from c_skincare limit #{index}, #{size}
     </select>
 
     <select id="count" resultType="int" parameterType="map">
-        select count(*) from skincare
+        select count(*) from c_skincare
     </select>
 
     <select id="findById" parameterType="int" resultType="com.pinming.pojo.Skincare">
-        select name,price,img from skincare where id=#{id}
+        select name,price,img from c_skincare where id=#{id}
+    </select>
+
+    <select id="findBySkintypeId" parameterType="int" resultType="com.pinming.pojo.Skincare">
+        select c.*,s.typename from c_skincare c inner join c_skincaretype s on c.skintypeid = s.id
+        where s.id= #{id}
+    </select>
+
+    <select id="findByBrandtypeId" parameterType="int" resultType="com.pinming.pojo.Skincare">
+        select c.*,b.brandname from c_skincare c inner join c_brandtype b on c.brandid = b.id
+        where b.id= #{id}
+    </select>
+
+    <select id="findByEfficacytyoeId" parameterType="int" resultType="com.pinming.pojo.Skincare">
+        select c.*,b.efficacyname from c_skincare c inner join c_efficacytype b on c.efficacyid = b.id
+        where b.id= #{id}
     </select>
 </mapper>

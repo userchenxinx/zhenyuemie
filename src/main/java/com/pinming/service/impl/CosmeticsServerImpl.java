@@ -60,4 +60,36 @@ public class CosmeticsServerImpl implements CosmeticsServce {
     public List<Cosmetics> findSkincareById(int id) {
         return cosmeticsMapper.findById(id);
     }
+
+    /**
+     * 通过肤质类型进行查询
+     * @param id
+     * @return
+     */
+    @Override
+    public List<Cosmetics> findSkintypeById(int id) {
+        return cosmeticsMapper.findBySkintypeId(id);
+    }
+
+    /**
+     * 通过品牌进行信息查询
+     * @param id
+     * @return
+     */
+    @Override
+    public List<Cosmetics> findBrandtypeById(int id) {
+        return cosmeticsMapper.findByBrandtypeId(id);
+    }
+
+    /**
+     * 通过功效进行查询信息
+     * @param id
+     * @return
+     */
+    @Override
+    public List<Cosmetics> findEfficacytypeById(int id) {
+        return cosmeticsMapper.findByEfficacytyoeId(id);
+    }
+
+
 }

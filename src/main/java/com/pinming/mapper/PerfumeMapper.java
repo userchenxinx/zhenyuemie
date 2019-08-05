@@ -35,4 +35,25 @@ public interface PerfumeMapper {
      * @return
      */
     public List<Perfume> findById(int id);
+
+    /**
+     * 通过肤质类型进行查询
+     * @param id
+     * @return
+     */
+    public List<Perfume> findBySkintypeId(int id);
+
+    /**
+     * 通过品牌进行信息查询
+     * @param id
+     * @return
+     */
+    public List<Perfume> findByBrandtypeId(int id);
+
+    /**
+     * 通过功效进行查询
+     * @param id
+     * @return
+     */
+    public List<Perfume> findByEfficacytyoeId(int id);
 }

@@ -33,4 +33,25 @@ public interface SkincareService {
      * @return
      */
     public List<Skincare> findSkincareById(int id);
+
+    /**
+     * 通过肤质类型进行查询信息
+     * @param id
+     * @return
+     */
+    public List<Skincare> findSkintypeById(int id);
+
+    /**
+     * 通过品牌类型进行信息查询
+     * @param id
+     * @return
+     */
+    public List<Skincare> findBrandtypeById(int id);
+
+    /**
+     * 通过功效进行查询
+     * @param id
+     * @return
+     */
+    public List<Skincare> findEfficacytypeById(int id);
 }

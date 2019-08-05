@@ -4,11 +4,10 @@ package com.pinming.pojo;
  * @author: jie
  * @create: 2019-08-01 17:07
  **/
-public class Cosmeticstype {
+public class skincaretype {
 
     private int id;
     private String typename;
-    private int cid;
 
     public int getId() {
         return id;
@@ -24,13 +23,5 @@ public class Cosmeticstype {
 
     public void setTypename(String typename) {
         this.typename = typename;
-    }
-
-    public int getCid() {
-        return cid;
-    }
-
-    public void setCid(int cid) {
-        this.cid = cid;
     }
 }

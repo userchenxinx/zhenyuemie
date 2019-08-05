@@ -4,15 +4,30 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.pinming.mapper.PerfumeMapper">
     <select id="findByIndexAndSize" parameterType="map" resultType="com.pinming.pojo.Perfume">
-        select * from perfume limit #{index},#{size}
+        select * from c_perfume limit #{index},#{size}
     </select>
 
     <select id="count" resultType="int" parameterType="map">
-        select count(*) from perfume
+        select count(*) from c_perfume
     </select>
 
-    <select id="findById" parameterType="int" resultType="com.pinming.pojo.Skincare">
-        select name,price,img from perfume where id=#{id}
+    <select id="findById" parameterType="int" resultType="com.pinming.pojo.Perfume">
+        select name,price,img from c_perfume where id=#{id}
+    </select>
+
+    <select id="findBySkintypeId" parameterType="int" resultType="com.pinming.pojo.Perfume">
+        select c.*,s.typename from c_perfume c inner join c_skincaretype s on c.skintypeid = s.id
+        where s.id= #{id}
+    </select>
+
+    <select id="findByBrandtypeId" parameterType="int" resultType="com.pinming.pojo.Perfume">
+        select c.*,b.brandname from c_perfume c inner join c_brandtype b on c.brandid = b.id
+        where b.id= #{id}
+    </select>
+
+    <select id="findByEfficacytyoeId" parameterType="int" resultType="com.pinming.pojo.Perfume">
+        select c.*,b.efficacyname from c_perfume c inner join c_efficacytype b on c.efficacyid = b.id
+        where b.id= #{id}
     </select>
 
 </mapper>

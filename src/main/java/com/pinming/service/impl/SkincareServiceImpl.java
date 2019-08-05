@@ -66,4 +66,34 @@ public class SkincareServiceImpl implements SkincareService {
     public List<Skincare> findSkincareById(int id) {
         return skincareMapper.findById(id);
     }
+
+    /**
+     * 通过肤质类型进行查询
+     * @param id
+     * @return
+     */
+    @Override
+    public List<Skincare> findSkintypeById(int id) {
+        return skincareMapper.findBySkintypeId(id);
+    }
+
+    /**
+     * 通过品牌进行信息查询
+     * @param id
+     * @return
+     */
+    @Override
+    public List<Skincare> findBrandtypeById(int id) {
+        return skincareMapper.findByBrandtypeId(id);
+    }
+
+    /**
+     * 通过功效进行查询信息
+     * @param id
+     * @return
+     */
+    @Override
+    public List<Skincare> findEfficacytypeById(int id) {
+        return skincareMapper.findByEfficacytyoeId(id);
+    }
 }

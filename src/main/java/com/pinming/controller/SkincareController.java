@@ -41,4 +41,28 @@ public class SkincareController {
         return new JsonBean(1, list);
     }
 
+    @RequestMapping(value = "/skin.do", method = RequestMethod.GET)
+    @ApiOperation(value = "该方法是通过指定肤色获取所有护肤品信息的方法")
+    public JsonBean findBySkintypeId(int id){
+        List<Skincare> list = skincareService.findSkintypeById(id);
+
+        return new JsonBean(1,list);
+    }
+
+    @RequestMapping(value = "/brand.do", method = RequestMethod.GET)
+    @ApiOperation(value = "该方法是通过指定品牌获取所有护肤品信息的方法")
+    public JsonBean findBrandById(int id){
+        List<Skincare> list = skincareService.findBrandtypeById(id);
+
+        return new JsonBean(1,list);
+    }
+
+    @RequestMapping(value = "/efficacy.do", method = RequestMethod.GET)
+    @ApiOperation(value = "该方法是通过指定品牌获取所有护肤品信息的方法")
+    public JsonBean findEfficacyById(int id){
+        List<Skincare> list = skincareService.findEfficacytypeById(id);
+
+        return new JsonBean(1,list);
+    }
+
 }

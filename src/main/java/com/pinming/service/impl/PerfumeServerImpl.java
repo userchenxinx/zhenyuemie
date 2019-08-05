@@ -60,4 +60,34 @@ public class PerfumeServerImpl implements PerfumeServce {
     public List<Perfume> findSkincareById(int id) {
         return perfumeMapper.findById(id);
     }
+
+    /**
+     * 通过肤质类型进行查询
+     * @param id
+     * @return
+     */
+    @Override
+    public List<Perfume> findSkintypeById(int id) {
+        return perfumeMapper.findBySkintypeId(id);
+    }
+
+    /**
+     * 通过品牌进行信息查询
+     * @param id
+     * @return
+     */
+    @Override
+    public List<Perfume> findBrandtypeById(int id) {
+        return perfumeMapper.findByBrandtypeId(id);
+    }
+
+    /**
+     * 通过功效进行查询信息
+     * @param id
+     * @return
+     */
+    @Override
+    public List<Perfume> findEfficacytypeById(int id) {
+        return perfumeMapper.findByEfficacytyoeId(id);
+    }
 }

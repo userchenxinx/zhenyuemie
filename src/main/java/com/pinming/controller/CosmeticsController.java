@@ -37,11 +37,35 @@ public class CosmeticsController {
     }
 
     @RequestMapping(value = "/query.do", method = RequestMethod.GET)
-    @ApiOperation(value = "该方法是通过指定id获取所有彩妆信息的方法")
+    @ApiOperation(value = "该方法是通过指定id获取彩妆信息的方法")
     public JsonBean findById(int id){
         List<Cosmetics> list = cosmeticsServer.findSkincareById(id);
 
         return new JsonBean(1, list);
+    }
+
+    @RequestMapping(value = "/skin.do", method = RequestMethod.GET)
+    @ApiOperation(value = "该方法是通过指定肤色获取所有彩妆信息的方法")
+    public JsonBean findBySkintypeId(int id){
+        List<Cosmetics> list = cosmeticsServer.findSkintypeById(id);
+
+        return new JsonBean(1,list);
+    }
+
+    @RequestMapping(value = "/brand.do", method = RequestMethod.GET)
+    @ApiOperation(value = "该方法是通过指定品牌获取所有彩妆信息的方法")
+    public JsonBean findBrandById(int id){
+        List<Cosmetics> list = cosmeticsServer.findBrandtypeById(id);
+
+        return new JsonBean(1,list);
+    }
+
+    @RequestMapping(value = "/efficacy.do", method = RequestMethod.GET)
+    @ApiOperation(value = "该方法是通过指定品牌获取所有彩妆信息的方法")
+    public JsonBean findEfficacyById(int id){
+        List<Cosmetics> list = cosmeticsServer.findEfficacytypeById(id);
+
+        return new JsonBean(1,list);
     }
 
 }

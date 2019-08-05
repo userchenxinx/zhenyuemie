@@ -16,9 +16,18 @@ public class Cosmetics {
     private String discount;
     private String img;
     private String effect;
-    private String skintype;
+    private int skintypeid;
     private int typeId;
     private int wtypeid;
+    private int brandid;
+
+    public int getBrandid() {
+        return brandid;
+    }
+
+    public void setBrandid(int brandid) {
+        this.brandid = brandid;
+    }
 
     public int getWtypeid() {
         return wtypeid;
@@ -109,12 +118,12 @@ public class Cosmetics {
         this.effect = effect;
     }
 
-    public String getSkintype() {
-        return skintype;
+    public int getSkintypeid() {
+        return skintypeid;
     }
 
-    public void setSkintype(String skintype) {
-        this.skintype = skintype;
+    public void setSkintypeid(int skintypeid) {
+        this.skintypeid = skintypeid;
     }
 
     public int getTypeId() {
