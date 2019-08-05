@@ -48,4 +48,12 @@ public class ManshopController {
     public R selectAllShop(){
         return manshopService.selectAll();
     }
+
+    //查看ftype类型下所有的商品
+    @ApiOperation(value = "展示ftype类型下所有商品",notes = "展示ftype类型下所有商品")
+    @ResponseBody
+    @GetMapping("/manlist/ftypeidlist.do")
+    public R selectTypeId(int id){
+        return manshopService.selectFtypeId(id);
+    }
 }

@@ -35,4 +35,12 @@
   <select id="findAllShop" parameterType="java.lang.Integer" resultType="com.pinming.pojo.Mshopdeta">
     select * FROM mshopdeta
   </select>
+  <select id="selectTypeId" parameterType="java.lang.Integer" resultType="com.pinming.model.MshopTyptV">
+    SELECT mf.ftype,ms.goodsname,ms.capacity,ms.effect,ms.price
+    ,ms.discount,ms.shopprice,ms.inventory,ms.imgpath, mf.id FROM mshopdeta ms
+    INNER JOIN mfunctiontype mf
+    on mf.id=ms.ftypeid
+    where mf.id=#{id}
+  </select>
+
 </mapper>

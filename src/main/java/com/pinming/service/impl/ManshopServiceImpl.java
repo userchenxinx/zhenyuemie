@@ -5,6 +5,7 @@ import com.pinming.mapper.ManshopMapper;
 import com.pinming.mapper.MshopdetaMapper;
 import com.pinming.mapper.MtypeMapper;
 import com.pinming.model.ManshopVG;
+import com.pinming.model.MshopTyptV;
 import com.pinming.model.MshopdfVG;
 import com.pinming.pojo.Mshopdeta;
 import com.pinming.service.ManshopService;
@@ -45,6 +46,12 @@ public class ManshopServiceImpl implements ManshopService {
     @Override
     public R selectAll() {
         List<Mshopdeta> list = mshopdetaMapper.findAllShop();
+        return R.setOK("OK",list);
+    }
+
+    @Override
+    public R selectFtypeId(int id) {
+        List<MshopTyptV> list = mshopdetaMapper.selectTypeId(id);
         return R.setOK("OK",list);
     }
 

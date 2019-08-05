@@ -13,5 +13,9 @@ spring:
 mybatis:
   type-aliases-package: com.pinming.pojo
   mapper-locations: classpath*:/mapper/*.xml
-
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
 
