@@ -2,17 +2,16 @@ package com.pinming.mapper;
 
 
 import com.pinming.pojo.Evaluate;
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
+import java.util.List;
+@Mapper
 public interface EvaluateMapper {
-    int deleteByPrimaryKey(Integer id);
 
-    int insert(Evaluate record);
+    // 通过商品的id查看指定商品的评价
+    //List<Evaluate> allEvaluateByGid(@Param("gid") int gid);
 
-    int insertSelective(Evaluate record);
+    // 添加评论
 
-    Evaluate selectByPrimaryKey(Integer id);
-
-    int updateByPrimaryKeySelective(Evaluate record);
-
-    int updateByPrimaryKey(Evaluate record);
 }
