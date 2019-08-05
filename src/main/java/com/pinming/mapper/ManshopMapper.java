@@ -1,0 +1,10 @@
+package com.pinming.mapper;
+import com.pinming.model.ManshopVG;
+import org.apache.ibatis.annotations.Mapper;
+
+
+import java.util.List;
+@Mapper
+public interface ManshopMapper {
+    List<ManshopVG> findList(int id);
+}

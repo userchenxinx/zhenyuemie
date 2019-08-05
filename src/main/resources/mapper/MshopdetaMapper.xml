@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pinming.mapper.MshopdetaMapper">
+  <resultMap id="BaseResultMap" type="com.pinming.pojo.Mshopdeta">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="wordtype" jdbcType="VARCHAR" property="wordtype" />
+    <result column="goodsname" jdbcType="VARCHAR" property="goodsname" />
+    <result column="capacity" jdbcType="VARCHAR" property="capacity" />
+    <result column="price" jdbcType="DOUBLE" property="price" />
+    <result column="shopprice" jdbcType="DOUBLE" property="shopprice" />
+    <result column="inventory" jdbcType="INTEGER" property="inventory" />
+    <result column="discount" jdbcType="DOUBLE" property="discount" />
+    <result column="praise" jdbcType="INTEGER" property="praise" />
+    <result column="effect" jdbcType="VARCHAR" property="effect" />
+    <result column="category" jdbcType="VARCHAR" property="category" />
+    <result column="datetime" jdbcType="TIMESTAMP" property="datetime" />
+    <result column="imgpath" jdbcType="VARCHAR" property="imgpath" />
+    <result column="explain" jdbcType="VARCHAR" property="explain" />
+    <result column="describe" jdbcType="VARCHAR" property="describe" />
+    <result column="ftypeid" jdbcType="INTEGER" property="ftypeid" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, wordtype, goodsname, capacity, price, shopprice, inventory, discount, praise, 
+    effect, category, datetime, imgpath, explain, describe, ftypeid
+  </sql>
+  <select id="findshopByftypeId" parameterType="java.lang.Integer" resultType="com.pinming.model.MshopdfVG">
+    SELECT mf.ftype,ms.goodsname, mf.id FROM mshopdeta ms
+    INNER JOIN mfunctiontype mf
+    on mf.id=ms.ftypeid
+    where mf.id=#{id}
+  </select>
+  <select id="selectById" parameterType="java.lang.Integer" resultType="com.pinming.pojo.Mshopdeta">
+    select * FROM mshopdeta where id=#{id}
+  </select>
+</mapper>

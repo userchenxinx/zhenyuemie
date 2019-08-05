@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pinming.mapper.ManshopMapper">
+  <resultMap id="BaseResultMap" type="com.pinming.pojo.Manshop">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="manlist" jdbcType="VARCHAR" property="manlist" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, manlist
+  </sql>
+  <select id="findList" parameterType="java.lang.Integer" resultType="com.pinming.model.ManshopVG">
+    select m.manlist,mt.listid,mt.id,mt.mtype,mf.mtid,mf.ftype FROM manshop m
+    INNER JOIN mtype mt
+    on mt.listid=m.id
+    INNER JOIN mfunctiontype mf
+    on mf.mtid=mt.id
+    where m.id=#{id}
+
+  </select>
+</mapper>
