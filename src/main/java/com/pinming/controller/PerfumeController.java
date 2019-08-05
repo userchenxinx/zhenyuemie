@@ -4,6 +4,8 @@ import com.pinming.common.util.JsonBean;
 import com.pinming.common.util.VPageInfo;
 import com.pinming.pojo.Perfume;
 import com.pinming.service.PerfumeServce;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -17,12 +19,14 @@ import java.util.List;
  **/
 @RestController
 @RequestMapping("perfume")
+@Api(value = "香氛信息", tags ="香氛")
 public class PerfumeController {
 
     @Autowired
     PerfumeServce perfumeServer;
 
     @RequestMapping(value = "/list.do", method = RequestMethod.GET)
+    @ApiOperation(value = "该方法是通过分页获取所有香氛信息的方法")
     public JsonBean findByPage(int page, Integer type, String info){
 
         VPageInfo<Perfume> pageInfo = perfumeServer.findByPage(page, type, info);
@@ -32,7 +36,8 @@ public class PerfumeController {
 
     }
 
-    @RequestMapping("query.do")
+    @RequestMapping(value = "/query.do", method = RequestMethod.GET)
+    @ApiOperation(value = "该方法是通过指定id获取所有护肤品信息的方法")
     public JsonBean findById(int id){
         List<Perfume> list = perfumeServer.findSkincareById(id);
 
