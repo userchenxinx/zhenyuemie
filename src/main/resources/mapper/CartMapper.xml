@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pinming.mapper.CartMapper">
+  <resultMap id="BaseResultMap" type="com.pinming.pojo.Cart">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="userId" jdbcType="INTEGER" property="userid" />
+    <result column="goodsId" jdbcType="INTEGER" property="goodsid" />
+    <result column="goodsnum" jdbcType="INTEGER" property="goodsnum" />
+    <result column="subtotal" jdbcType="DOUBLE" property="subtotal" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, userId, goodsId, goodsnum, subtotal
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultType="com.pinming.vo.CartGoods">
+   select sk.img,sk.name,sk.price,c.goodsnum,c.subtotal from cart c
+   INNER JOIN c_skincare sk
+   on c.goodsId = sk.id
+   where userId = #{userid}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from  cart
+    where userId = #{userid}
+  </delete>
+
+  <delete id="deleteById" parameterType="java.lang.Integer">
+    delete from  cart
+    where id = #{id}
+  </delete>
+  <insert id="insert" parameterType="com.pinming.pojo.Cart">
+    insert into cart ( userId, goodsId,
+      goodsnum)
+    values (#{userid,jdbcType=INTEGER}, #{goodsid,jdbcType=INTEGER},
+      #{goodsnum,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.pinming.pojo.Cart">
+    insert into cart
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="userid != null">
+        userId,
+      </if>
+      <if test="goodsid != null">
+        goodsId,
+      </if>
+      <if test="goodsnum != null">
+        goodsnum,
+      </if>
+      <if test="subtotal != null">
+        subtotal,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="userid != null">
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="goodsid != null">
+        #{goodsid,jdbcType=INTEGER},
+      </if>
+      <if test="goodsnum != null">
+        #{goodsnum,jdbcType=INTEGER},
+      </if>
+      <if test="subtotal != null">
+        #{subtotal,jdbcType=DOUBLE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.pinming.pojo.Cart">
+    update cart
+    <set>
+      <if test="userid != null">
+        userId = #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="goodsid != null">
+        goodsId = #{goodsid,jdbcType=INTEGER},
+      </if>
+      <if test="goodsnum != null">
+        goodsnum = #{goodsnum,jdbcType=INTEGER},
+      </if>
+      <if test="subtotal != null">
+        subtotal = #{subtotal,jdbcType=DOUBLE},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.pinming.pojo.Cart">
+    update cart
+    set userId = #{userid,jdbcType=INTEGER},
+      goodsId = #{goodsid,jdbcType=INTEGER},
+      goodsnum = #{goodsnum,jdbcType=INTEGER},
+      subtotal = #{subtotal,jdbcType=DOUBLE}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
