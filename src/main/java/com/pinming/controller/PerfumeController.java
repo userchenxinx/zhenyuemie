@@ -2,8 +2,8 @@ package com.pinming.controller;
 
 import com.pinming.common.util.JsonBean;
 import com.pinming.common.util.VPageInfo;
-import com.pinming.pojo.Cosmetics;
-import com.pinming.service.CosmeticsServce;
+import com.pinming.pojo.Perfume;
+import com.pinming.service.PerfumeServce;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -16,16 +16,16 @@ import java.util.List;
  * @create: 2019-08-01 20:05
  **/
 @RestController
-@RequestMapping("cosmetics")
-public class CosmeticsController {
+@RequestMapping("perfume")
+public class PerfumeController {
 
     @Autowired
-    CosmeticsServce cosmeticsServer;
+    PerfumeServce perfumeServer;
 
     @RequestMapping(value = "/list.do", method = RequestMethod.GET)
     public JsonBean findByPage(int page, Integer type, String info){
 
-        VPageInfo<Cosmetics> pageInfo = cosmeticsServer.findByPage(page, type, info);
+        VPageInfo<Perfume> pageInfo = perfumeServer.findByPage(page, type, info);
         System.out.println(pageInfo);
 
         return new JsonBean(1,pageInfo);
@@ -34,7 +34,7 @@ public class CosmeticsController {
 
     @RequestMapping("query.do")
     public JsonBean findById(int id){
-        List<Cosmetics> list = cosmeticsServer.findSkincareById(id);
+        List<Perfume> list = perfumeServer.findSkincareById(id);
 
         return new JsonBean(1, list);
     }

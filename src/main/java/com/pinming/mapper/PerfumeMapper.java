@@ -1,6 +1,6 @@
 package com.pinming.mapper;
 
-import com.pinming.pojo.Cosmetics;
+import com.pinming.pojo.Perfume;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
@@ -11,15 +11,15 @@ import java.util.List;
  * @create: 2019-08-01 17:14
  **/
 @Mapper
-public interface CosmeticsMapper {
+public interface PerfumeMapper {
 
     /**
      * 查询所有的商品信息
      * @return
      */
-    public List<Cosmetics> findByIndexAndSize(@Param("index") int index, @Param("size") int size,
+    public List<Perfume> findByIndexAndSize(@Param("index") int index, @Param("size") int size,
 
-                                              @Param("type") Integer type, @Param("info") String info);
+                                            @Param("type") Integer type, @Param("info") String info);
 
     /**
      * 计算页数
@@ -34,5 +34,5 @@ public interface CosmeticsMapper {
      * @param id
      * @return
      */
-    public List<Cosmetics> findById(int id);
+    public List<Perfume> findById(int id);
 }
