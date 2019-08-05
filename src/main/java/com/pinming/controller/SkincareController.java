@@ -58,7 +58,7 @@ public class SkincareController {
     }
 
     @RequestMapping(value = "/efficacy.do", method = RequestMethod.GET)
-    @ApiOperation(value = "该方法是通过指定品牌获取所有护肤品信息的方法")
+    @ApiOperation(value = "该方法是通过指定功效获取所有护肤品信息的方法")
     public JsonBean findEfficacyById(int id){
         List<Skincare> list = skincareService.findEfficacytypeById(id);
 
