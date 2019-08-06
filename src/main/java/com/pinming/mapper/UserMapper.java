@@ -13,4 +13,6 @@ public interface UserMapper {
     Integer login(String email,String password);
 
     User findUserByEmail(String email);
+
+    void addUser(User user);
 }
