@@ -7,6 +7,7 @@ import com.pinming.mapper.ManshopMapper;
 import com.pinming.mapper.MshopdetaMapper;
 import com.pinming.mapper.MtypeMapper;
 import com.pinming.model.ManshopVG;
+import com.pinming.model.MshopTyptV;
 import com.pinming.model.MshopdfVG;
 import com.pinming.pojo.Mshopdeta;
 import com.pinming.service.ManshopService;
@@ -46,18 +47,19 @@ public class ManshopServiceImpl implements ManshopService {
         return R.setOK("OK",list);
     }
 
-    //测试分页
     @Override
-    public Map<String, Object> selectAll(int page) {
-        PageHelper.startPage(page,2);
+    public R selectAll() {
         List<Mshopdeta> list = mshopdetaMapper.findAllShop();
-        Map<String,Object> map = new HashMap<>();
-        //获取总记录书
-        map.put("total",((Page)list).getTotal());
-        //当前页显示的记录
-        map.put("rows",list);
-        return map;
+        return R.setOK("OK",list);
     }
+
+    @Override
+    public R selectFtypeId(int id) {
+        List<MshopTyptV> list = mshopdetaMapper.selectTypeId(id);
+        return R.setOK("OK",list);
+    }
+
+
 
 //    //分页测试
 //    @Override
@@ -69,15 +71,11 @@ public class ManshopServiceImpl implements ManshopService {
 //        map.put("total",((Page)list).getTotal());
 //        //当前页显示的记录
 //        map.put("rows",list);
-//
-//        return R.setOK("OK",map);
-//    }
+////
+////        return R.setOK("OK",map);
+////    }
 
-    @Override
-    public List<Mshopdeta> findByType(String goodsname) {
-        List<Mshopdeta> list = manshopMapper.findByType(goodsname);
-        return list;
-    }
+
 
     @Override
     public R selectTime(int ftypeid) {

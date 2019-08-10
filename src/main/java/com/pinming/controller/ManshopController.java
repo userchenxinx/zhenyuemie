@@ -75,11 +75,4 @@ public class ManshopController {
         return manshopService.selectPrice(ftypeid);
     }
 
-//    // 分页查询
-//    @ApiOperation(value = "分页查询",notes = "分页查询笑话")
-//    @GetMapping("/juhe/joker/page/{page}/{count}")
-//    public R page(@PathVariable int page,int count){
-//        Page<MshopTyptV> page1 = new Page<>(page, count);
-//        return R.setOK("OK",manshopService.)
-//    }
 }
