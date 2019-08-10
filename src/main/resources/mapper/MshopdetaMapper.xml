@@ -42,5 +42,34 @@
     on mf.id=ms.ftypeid
     where mf.id=#{id}
   </select>
+  <select id="selectTime" parameterType="java.lang.Integer" resultType="com.pinming.pojo.Mshopdeta">
+    SELECT goodsname,capacity,effect,price,datetime
+,discount,shopprice,inventory,imgpath, ftypeid FROM mshopdeta
+    where ftypeid=#{ftypeid}
+		ORDER BY datetime ASC LIMIT 12
+  </select>
 
+  <select id="selectPrice" parameterType="java.lang.Integer" resultType="com.pinming.pojo.Mshopdeta">
+    SELECT goodsname,capacity,effect,price
+,discount,shopprice,inventory,imgpath, ftypeid FROM mshopdeta
+    where ftypeid=#{ftypeid}
+		ORDER BY price ASC LIMIT 12
+  </select>
+  <select id="selectNFtype" resultType="com.pinming.pojo.Mshopdeta">
+    SELECT imgpath FROM mshopdeta where wordtype =#{wordname} LIMIT 15
+  </select>
+  <select id="selectImg"  resultType="com.pinming.pojo.Mshopdeta">
+    SELECT * FROM mshopdeta where imgpath=#{img}
+  </select>
+  <select id="selectDiscount"  resultType="com.pinming.model.MshopTyptV">
+    SELECT goodsname,capacity,effect,price
+    ,discount,shopprice,inventory,imgpath FROM mshopdeta
+		ORDER BY discount ASC LIMIT 20
+  </select>
+
+  <select id="selection"  resultType="com.pinming.pojo.Mshopdeta">
+    SELECT goodsname,capacity,effect,price
+    ,discount,praise,shopprice,inventory,imgpath FROM mshopdeta
+		ORDER BY discount ASC,praise DESC LIMIT 10
+  </select>
 </mapper>

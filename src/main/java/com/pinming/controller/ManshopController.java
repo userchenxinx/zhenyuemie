@@ -1,6 +1,8 @@
 package com.pinming.controller;
 
+import com.github.pagehelper.Page;
 import com.pinming.common.vo.R;
+import com.pinming.model.MshopTyptV;
 import com.pinming.service.ManshopService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -8,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 
@@ -56,4 +59,27 @@ public class ManshopController {
     public R selectTypeId(int id){
         return manshopService.selectFtypeId(id);
     }
+    //根据时间进行商品排序
+    @ApiOperation(value = "根据时间进行商品排序",notes = "根据时间进行商品排序")
+    @ResponseBody
+    @GetMapping("/manlist/time.do")
+    public R selectTime(int ftypeid){
+        return manshopService.selectTime(ftypeid);
+    }
+
+    //根据价格进行商品排序
+    @ApiOperation(value = "根据价格进行商品排序",notes = "根据价格进行商品排序")
+    @ResponseBody
+    @GetMapping("/manlist/price.do")
+    public R selectPrice(int ftypeid){
+        return manshopService.selectPrice(ftypeid);
+    }
+
+//    // 分页查询
+//    @ApiOperation(value = "分页查询",notes = "分页查询笑话")
+//    @GetMapping("/juhe/joker/page/{page}/{count}")
+//    public R page(@PathVariable int page,int count){
+//        Page<MshopTyptV> page1 = new Page<>(page, count);
+//        return R.setOK("OK",manshopService.)
+//    }
 }

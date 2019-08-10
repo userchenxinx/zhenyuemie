@@ -55,4 +55,18 @@ public class ManshopServiceImpl implements ManshopService {
         return R.setOK("OK",list);
     }
 
+    @Override
+    public R selectTime(int ftypeid) {
+        List<Mshopdeta> list = mshopdetaMapper.selectTime(ftypeid);
+        return R.setOK("OK",list);
+    }
+
+    @Override
+    public R selectPrice(int ftypeid) {
+        List<Mshopdeta> list = mshopdetaMapper.selectPrice(ftypeid);
+        return R.setOK("OK",list);
+    }
+
+
+
 }

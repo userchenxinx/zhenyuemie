@@ -15,6 +15,5 @@
     INNER JOIN mfunctiontype mf
     on mf.mtid=mt.id
     where m.id=#{id}
-
   </select>
 </mapper>
