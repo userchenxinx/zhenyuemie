@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
+import java.util.Map;
 
 
 @Controller
@@ -46,12 +47,24 @@ public class ManshopController {
         return manshopService.selectById(id);
     }
 
+//    //查看所有商品
+//    @ApiOperation(value = "查看所有商品",notes = "查看所有商品")
+//    @ResponseBody
+//    @GetMapping("/manlist/allshop .do")
+//    //分页测试
+//    public R selectAllShop(int page){
+//        Map<String,Object> map = (Map<String, Object>) manshopService.selectAll(page);
+//        return R.setOK("成功",map);
+//    }
+
     //查看所有商品
-    @ApiOperation(value = "查看所有商品",notes = "查看所有商品")
+    @ApiOperation(value = "查看所有商品-分页@@@",notes = "查看所有商品")
     @ResponseBody
     @GetMapping("/manlist/allshop .do")
-    public R selectAllShop(){
-        return manshopService.selectAll();
+    //分页测试
+    public JsonBean selectAllShop(int page){
+        Map<String,Object> map = manshopService.selectAll(page);
+        return new JsonBean(1,map);
     }
 
     @ApiOperation(value = "全文搜索商品")
