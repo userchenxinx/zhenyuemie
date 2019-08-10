@@ -58,4 +58,24 @@ public interface SkincareMapper {
      * @return
      */
     public List<Skincare> findByEfficacytyoeId(int id);
+
+    /**
+     * 通过价格升序展示
+     * @param price
+     * @return
+     */
+    public List<Skincare> findAllAsc(Double price);
+
+    /**
+     * 通过价格降序展示
+     * @param price
+     * @return
+     */
+    public List<Skincare> findAllDesc(Double price);
+
+    /**
+     * 通过类型进行查询
+     * @return
+     */
+    public List<Skincare> selectAll();
 }

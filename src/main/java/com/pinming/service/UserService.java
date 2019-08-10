@@ -8,7 +8,9 @@ import com.pinming.pojo.User;
  **/
 public interface UserService {
 
-    public boolean login(String email,String password);
+    boolean login(String email, String password);
 
-    public User findUserByEmail(String email);
+    User findUserByEmail(String email);
+
+    public void addUser(User user);
 }

@@ -16,7 +16,7 @@
     </select>
 
     <select id="findBySkintypeId" parameterType="int" resultType="com.pinming.pojo.Perfume">
-        select c.*,s.typename from c_perfume c inner join c_skincaretype s on c.skintypeid = s.id
+        select c.*,s.typename from c_perfume c inner join c_skintype s on c.skintypeid = s.id
         where s.id= #{id}
     </select>
 
@@ -30,4 +30,16 @@
         where b.id= #{id}
     </select>
 
+    <select id="findAllAsc" resultType="com.pinming.pojo.Perfume" parameterType="double">
+        select * from c_perfume order by price asc
+    </select>
+
+    <select id="findAllDesc" resultType="com.pinming.pojo.Perfume" parameterType="double">
+        select * from c_perfume order by price desc
+    </select>
+
+    <select id="selectAll" resultType="com.pinming.pojo.Perfume" >
+        select c.*,b.typename from c_perfume c inner join c_type b on c.typeId = b.id
+        where b.id= #{id}
+    </select>
 </mapper>

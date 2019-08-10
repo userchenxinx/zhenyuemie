@@ -9,4 +9,8 @@
     <select id="findUserByEmail" parameterType="string" resultType="com.pinming.pojo.User">
         select * from user where email = #{email}
     </select>
+
+    <insert id="addUser" parameterType="user">
+        insert into user(id,email,password,createtime) values(null,#{email},#{password},#{createtime})
+    </insert>
 </mapper>

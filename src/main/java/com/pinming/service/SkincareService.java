@@ -54,4 +54,24 @@ public interface SkincareService {
      * @return
      */
     public List<Skincare> findEfficacytypeById(int id);
+
+    /**
+     * 通过价格进行升序排序
+     * @param price
+     * @return
+     */
+    public List<Skincare> findSkincareAsc(Double price);
+
+    /**
+     * 通过价格进行降序排序
+     * @param price
+     * @return
+     */
+    public List<Skincare> findSkincareDesc(Double price);
+
+    /**
+     * 通过类型查询所有
+     * @return
+     */
+    public List<Skincare> selectAllGoods();
 }

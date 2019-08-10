@@ -68,4 +68,28 @@ public class PerfumeController {
         return new JsonBean(1,list);
     }
 
+    @RequestMapping(value = "/asc.do", method = RequestMethod.GET)
+    @ApiOperation(value = "该方法是通过价格升序获取所有香氛信息的方法")
+    public JsonBean findAllAsc(Double price){
+        List<Perfume> list = perfumeServer.findSkincareAsc(price);
+
+        return new JsonBean(1,list);
+    }
+
+    @RequestMapping(value = "/desc.do", method = RequestMethod.GET)
+    @ApiOperation(value = "该方法是通过价格降序获取所有香氛信息的方法")
+    public JsonBean findAllDesc(Double price){
+        List<Perfume> list = perfumeServer.findSkincareDesc(price);
+
+        return new JsonBean(1,list);
+    }
+
+    @RequestMapping(value = "/select.do", method = RequestMethod.GET)
+    @ApiOperation(value = "该方法是通过类型获取所有香氛信息的方法")
+    public JsonBean selectAll(Double price){
+        List<Perfume> list = perfumeServer.selectAllGoods();
+
+        return new JsonBean(1,list);
+    }
+
 }

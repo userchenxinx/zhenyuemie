@@ -53,4 +53,24 @@ public interface CosmeticsServce {
      * @return
      */
     public List<Cosmetics> findEfficacytypeById(int id);
+
+    /**
+     * 通过价格进行升序排序
+     * @param price
+     * @return
+     */
+    public List<Cosmetics> findSkincareAsc(Double price);
+
+    /**
+     * 通过价格进行降序排序
+     * @param price
+     * @return
+     */
+    public List<Cosmetics> findSkincareDesc(Double price);
+
+    /**
+     * 通过类型查询所有
+     * @return
+     */
+    public List<Cosmetics> selectAllGoods();
 }

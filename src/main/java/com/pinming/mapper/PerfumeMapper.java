@@ -56,4 +56,24 @@ public interface PerfumeMapper {
      * @return
      */
     public List<Perfume> findByEfficacytyoeId(int id);
+
+    /**
+     * 通过价格升序展示
+     * @param price
+     * @return
+     */
+    public List<Perfume> findAllAsc(Double price);
+
+    /**
+     * 通过价格降序展示
+     * @param price
+     * @return
+     */
+    public List<Perfume> findAllDesc(Double price);
+
+    /**
+     * 通过类型进行查询
+     * @return
+     */
+    public List<Perfume> selectAll();
 }

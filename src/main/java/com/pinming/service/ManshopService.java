@@ -12,6 +12,7 @@ public interface ManshopService {
 
     R selectAll();
 
+
     R selectFtypeId(int id);
 
     R selectTime(int ftypeid);
