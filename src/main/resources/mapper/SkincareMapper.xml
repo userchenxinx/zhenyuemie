@@ -37,4 +37,9 @@
     <select id="findAllDesc" resultType="com.pinming.pojo.Skincare" parameterType="double">
         select * from c_skincare order by price desc
     </select>
+
+    <select id="selectAll" resultType="com.pinming.pojo.Skincare" >
+        select c.*,b.typename from c_skincare c inner join c_type b on c.typeId = b.id
+        where b.id= #{id}
+    </select>
 </mapper>

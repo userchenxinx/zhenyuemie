@@ -110,4 +110,13 @@ public class PerfumeServerImpl implements PerfumeServce {
     public List<Perfume> findSkincareDesc(Double price) {
         return perfumeMapper.findAllDesc(price);
     }
+
+    /**
+     * 通过类型查询所有数据
+     * @return
+     */
+    @Override
+    public List<Perfume> selectAllGoods() {
+        return perfumeMapper.selectAll();
+    }
 }

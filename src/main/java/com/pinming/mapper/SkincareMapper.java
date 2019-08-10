@@ -72,4 +72,10 @@ public interface SkincareMapper {
      * @return
      */
     public List<Skincare> findAllDesc(Double price);
+
+    /**
+     * 通过类型进行查询
+     * @return
+     */
+    public List<Skincare> selectAll();
 }

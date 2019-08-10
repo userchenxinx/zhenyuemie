@@ -70,4 +70,10 @@ public interface PerfumeMapper {
      * @return
      */
     public List<Perfume> findAllDesc(Double price);
+
+    /**
+     * 通过类型进行查询
+     * @return
+     */
+    public List<Perfume> selectAll();
 }

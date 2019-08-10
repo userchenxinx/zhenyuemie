@@ -111,5 +111,12 @@ public class CosmeticsServerImpl implements CosmeticsServce {
         return cosmeticsMapper.findAllDesc(price);
     }
 
-
+    /**
+     * 通过类型查询所有数据
+     * @return
+     */
+    @Override
+    public List<Cosmetics> selectAllGoods() {
+        return cosmeticsMapper.selectAll();
+    }
 }

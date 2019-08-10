@@ -84,4 +84,12 @@ public class PerfumeController {
         return new JsonBean(1,list);
     }
 
+    @RequestMapping(value = "/select.do", method = RequestMethod.GET)
+    @ApiOperation(value = "该方法是通过类型获取所有香氛信息的方法")
+    public JsonBean selectAll(Double price){
+        List<Perfume> list = perfumeServer.selectAllGoods();
+
+        return new JsonBean(1,list);
+    }
+
 }

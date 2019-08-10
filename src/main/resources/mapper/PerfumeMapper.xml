@@ -38,4 +38,8 @@
         select * from c_perfume order by price desc
     </select>
 
+    <select id="selectAll" resultType="com.pinming.pojo.Perfume" >
+        select c.*,b.typename from c_perfume c inner join c_type b on c.typeId = b.id
+        where b.id= #{id}
+    </select>
 </mapper>

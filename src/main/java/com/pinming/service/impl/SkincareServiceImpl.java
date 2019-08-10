@@ -116,4 +116,13 @@ public class SkincareServiceImpl implements SkincareService {
     public List<Skincare> findSkincareDesc(Double price) {
         return skincareMapper.findAllDesc(price);
     }
+
+    /**
+     * 通过类型查询所有数据
+     * @return
+     */
+    @Override
+    public List<Skincare> selectAllGoods() {
+        return skincareMapper.selectAll();
+    }
 }

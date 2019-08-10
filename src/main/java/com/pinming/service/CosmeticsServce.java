@@ -67,4 +67,10 @@ public interface CosmeticsServce {
      * @return
      */
     public List<Cosmetics> findSkincareDesc(Double price);
+
+    /**
+     * 通过类型查询所有
+     * @return
+     */
+    public List<Cosmetics> selectAllGoods();
 }
