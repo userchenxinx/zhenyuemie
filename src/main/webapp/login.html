@@ -20,26 +20,30 @@
 	<script type="text/javascript" src="theme/scripts/config.js"></script>
 	<script type="text/javascript" src="theme/scripts/navigation.js"></script>
 	<script type="text/javascript" src="js/jquery-2.1.0.min.js"></script>
-	<script type="text/javascript">
+	<!--<script type="text/javascript">
 		$("#loginBtn").click(function () {
 			$.ajax({
 				type:"post",
 				url:"/user/login.do",
-				//$("form").serialize();
-				data:{email:$("#username").val(),password:$("#password").val()},
+				//{email:$("#username").val(),password:$("#password").val()}
+				data:$("#login").serialize(),
 				dataType:"json",
 				success:function (data) {
 					if (data.code=1){
-						location.href ="index.html";
+						alert("fsdfdsafdsada");
+						window.location.href="index.html";
+						return false;
+						//window.event.returnValue=false;
 					}else {
 						alert(data.info);
+
 					}
 				}
 			});
 			return false;
 		})
 
-	</script>
+	</script>-->
 
 </head>
 
@@ -67,7 +71,7 @@
 				</h2>
 				<div class="loginleft fl">
 
-					<form id="login">
+					<form action="/user/login.do" id="login"method="post">
 						<fieldset>
 
 							<div class="clear">
@@ -89,7 +93,7 @@
 								</div>
 							</div>
 							<div class="clear button">
-								<input value="µÇ Â¼" id="loginBtn" class="btn btn_blue" type="submit" onsubmit="false">
+								<input value="µÇ Â¼" id="loginBtn" class="btn btn_blue" type="submit">
 							</div>
 						</fieldset>
 

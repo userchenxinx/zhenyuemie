@@ -41,7 +41,7 @@
 
 			<div class="forgot">
 				<h3>忘记密码</h3>
-				<form action="/sign/forgot" method="post">
+				<form action="/user/forgot.do" method="post" onsubmit="false">
 					<fieldset class="">
 
 						<div class="clear">
@@ -54,12 +54,12 @@
 						</div>
 
 						<div class="clear">
-							<label for="captcha"><i class="icons icon-barcode  fl"></i>
+							<label for="code"><i class="icons icon-barcode  fl"></i>
 								验证码</label>
 							<div class="row4">
-								<input name="captcha" id="captcha" value="" class="text"
-									placeholder="Captcha" > <span
-									class="captcha" title="看不清，点击更换">
+								<input name="code" id="code" value="" class="text"
+									placeholder="code" > <span
+									class="code" title="看不清，点击更换">
 								<img src="/user/createcode.do" id="codeId" style="border: 0;"
 									alt=" " height="40" width="150"></span>
 							</div>
@@ -130,6 +130,13 @@
 		$(this).attr("src", "/user/createcode.do?r=" + Math.random());
 	})
 
+	$("form").function({
+
+	})
+
+
+
 </script>
+
 </body>
 </html>

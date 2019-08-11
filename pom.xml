@@ -68,14 +68,11 @@
             <version>2.9.2</version>
         </dependency>
 
-
         <dependency>
             <groupId>redis.clients</groupId>
             <artifactId>jedis</artifactId>
             <version>3.0.1</version>
         </dependency>
-
-
 
         <!--jackson-->
         <dependency>

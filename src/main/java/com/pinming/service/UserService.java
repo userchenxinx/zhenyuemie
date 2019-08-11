@@ -4,13 +4,13 @@ import com.pinming.pojo.User;
 
 /**
  * @author: djs
- * @create: 2019-08-02 22:37
+ * @create: 2019-08-11 13:24
  **/
 public interface UserService {
 
-    boolean login(String email, String password);
-
-    User findUserByEmail(String email);
-
     public void addUser(User user);
+
+    Integer findUserById(Integer id);
+
+    void updateUserDetail(User user);
 }
