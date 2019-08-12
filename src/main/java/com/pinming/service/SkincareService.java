@@ -32,7 +32,7 @@ public interface SkincareService {
      * @param id
      * @return
      */
-    public List<Skincare> findSkincareById(int id);
+    public Skincare findSkincareById(int id);
 
     /**
      * 通过肤质类型进行查询信息

@@ -63,7 +63,7 @@ public class SkincareServiceImpl implements SkincareService {
      * @return
      */
     @Override
-    public List<Skincare> findSkincareById(int id) {
+    public Skincare findSkincareById(int id) {
         return skincareMapper.findById(id);
     }
 
