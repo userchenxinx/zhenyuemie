@@ -43,7 +43,13 @@
         where b.id= #{id}
     </select>
 
-
+    <select id="selectAllGoods" resultType="com.pinming.pojo.Cosmetics" >
+        select c.*,b.efficacyname,s.typename,bt.brandname from c_skincare c
+        inner join c_efficacytype b on c.efficacyid = b.id
+        inner join c_brandtype bt on c.brandid = bt.id
+        inner join c_skintype s on c.skintypeid = s.id
+        where b.id= #{id}
+    </select>
 
 
 </mapper>

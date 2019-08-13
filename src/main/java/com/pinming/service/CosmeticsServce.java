@@ -73,4 +73,10 @@ public interface CosmeticsServce {
      * @return
      */
     public List<Cosmetics> selectAllGoods();
+
+    /**
+     * 通过多种条件进行查询
+     * @return
+     */
+    public List<Cosmetics> findAllGoods();
 }

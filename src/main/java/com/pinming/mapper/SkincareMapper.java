@@ -78,4 +78,6 @@ public interface SkincareMapper {
      * @return
      */
     public List<Skincare> selectAll();
+
+
 }

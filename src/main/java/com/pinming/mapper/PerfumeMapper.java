@@ -76,4 +76,10 @@ public interface PerfumeMapper {
      * @return
      */
     public List<Perfume> selectAll();
+
+    /**
+     * 通过多种条件进行查询
+     * @return
+     */
+    public List<Perfume> selectAllGoods();
 }

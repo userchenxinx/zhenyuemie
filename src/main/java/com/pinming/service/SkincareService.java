@@ -74,4 +74,6 @@ public interface SkincareService {
      * @return
      */
     public List<Skincare> selectAllGoods();
+
+
 }

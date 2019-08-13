@@ -76,4 +76,10 @@ public interface CosmeticsMapper {
      * @return
      */
     public List<Cosmetics> selectAll();
+
+    /**
+     * 通过多种条件进行查询
+     * @return
+     */
+    public List<Cosmetics> selectAllGoods();
 }

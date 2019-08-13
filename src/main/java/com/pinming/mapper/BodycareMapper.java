@@ -78,4 +78,10 @@ public interface BodycareMapper {
      * @return
      */
     public List<Bodycare> selectAll();
+
+    /**
+     * 通过多种条件进行查询
+     * @return
+     */
+    public List<Bodycare> selectAllGoods();
 }

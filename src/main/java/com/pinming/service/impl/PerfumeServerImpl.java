@@ -3,6 +3,7 @@ package com.pinming.service.impl;
 import com.pinming.common.util.VPageInfo;
 import com.pinming.mapper.PerfumeMapper;
 import com.pinming.pojo.Perfume;
+import com.pinming.pojo.Skincare;
 import com.pinming.service.PerfumeServce;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -118,5 +119,14 @@ public class PerfumeServerImpl implements PerfumeServce {
     @Override
     public List<Perfume> selectAllGoods() {
         return perfumeMapper.selectAll();
+    }
+
+    /**
+     * 通过多种类型条件进行查询信息
+     * @return
+     */
+    @Override
+    public List<Perfume> findAllGoods() {
+        return perfumeMapper.selectAllGoods();
     }
 }

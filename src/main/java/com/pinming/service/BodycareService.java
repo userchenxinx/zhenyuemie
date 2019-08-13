@@ -74,4 +74,10 @@ public interface BodycareService {
      * @return
      */
     public List<Bodycare> selectAllGoods();
+
+    /**
+     * 通过多种条件进行查询
+     * @return
+     */
+    public List<Bodycare> findAllGoods();
 }

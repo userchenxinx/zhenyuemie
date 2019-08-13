@@ -42,4 +42,8 @@
         select c.*,b.typename from c_skincare c inner join c_type b on c.typeId = b.id
         where b.id= #{id}
     </select>
+
+
+
+
 </mapper>

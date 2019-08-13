@@ -125,4 +125,6 @@ public class SkincareServiceImpl implements SkincareService {
     public List<Skincare> selectAllGoods() {
         return skincareMapper.selectAll();
     }
+
+
 }
