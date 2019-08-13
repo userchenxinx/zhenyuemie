@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pinming.mapper.BodycareMapper">
+    <select id="findBySizeAndIndex" parameterType="map" resultType="com.pinming.pojo.Bodycare">
+        select * from c_bodycare limit #{index}, #{size}
+    </select>
+
+    <select id="count" resultType="int" parameterType="map">
+        select count(*) from c_bodycare
+    </select>
+
+    <select id="findById" parameterType="int" resultType="com.pinming.pojo.Bodycare">
+        select name,price,img from c_bodycare where id=#{id}
+    </select>
+
+    <select id="findBySkintypeId" parameterType="int" resultType="com.pinming.pojo.Bodycare">
+        select c.*,s.typename from c_bodycare c inner join c_skintype s on c.skintypeid = s.id
+        where s.id= #{id}
+    </select>
+
+    <select id="findByBrandtypeId" parameterType="int" resultType="com.pinming.pojo.Bodycare">
+        select c.*,b.brandname from c_bodycare c inner join c_brandtype b on c.brandid = b.id
+        where b.id= #{id}
+    </select>
+
+    <select id="findByEfficacytyoeId" parameterType="int" resultType="com.pinming.pojo.Bodycare">
+        select c.*,b.efficacyname from c_bodycare c inner join c_efficacytype b on c.efficacyid = b.id
+        where b.id= #{id}
+    </select>
+
+    <select id="findAllAsc" resultType="com.pinming.pojo.Bodycare" parameterType="double">
+        select * from c_bodycare order by price asc
+    </select>
+
+    <select id="findAllDesc" resultType="com.pinming.pojo.Bodycare" parameterType="double">
+        select * from c_bodycare order by price desc
+    </select>
+
+    <select id="selectAll" resultType="com.pinming.pojo.Bodycare" >
+        select c.*,b.typename from c_bodycare c inner join c_type b on c.typeId = b.id
+        where b.id= #{id}
+    </select>
+</mapper>
