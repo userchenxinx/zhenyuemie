@@ -83,5 +83,5 @@ public interface BodycareMapper {
      * 通过多种条件进行查询
      * @return
      */
-    public List<Bodycare> selectAllGoods(int efid, int brid, int skid);
+    public List<Bodycare> selectAllGoods(@Param("efid") int efid,@Param("brid") int brid,@Param("skid") int skid);
 }
