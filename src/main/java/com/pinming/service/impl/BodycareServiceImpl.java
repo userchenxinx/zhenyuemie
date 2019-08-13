@@ -3,7 +3,6 @@ package com.pinming.service.impl;
 import com.pinming.common.util.VPageInfo;
 import com.pinming.mapper.BodycareMapper;
 import com.pinming.pojo.Bodycare;
-import com.pinming.pojo.Cosmetics;
 import com.pinming.service.BodycareService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -128,7 +127,7 @@ public class BodycareServiceImpl implements BodycareService {
     }
 
     @Override
-    public List<Bodycare> findAllGoods() {
-        return bodycareMapper.selectAllGoods();
+    public List<Bodycare> findAllGoods(int id) {
+        return bodycareMapper.selectAllGoods(id);
     }
 }

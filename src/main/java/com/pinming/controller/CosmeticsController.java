@@ -94,8 +94,8 @@ public class CosmeticsController {
 
     @RequestMapping(value = "/findall.do", method = RequestMethod.GET)
     @ApiOperation(value = "该方法是通过多类型条件获取所有彩妆信息的方法")
-    public JsonBean findgoodsAll(){
-        List<Cosmetics> list = cosmeticsServer.findAllGoods();
+    public JsonBean findgoodsAll(int id){
+        List<Cosmetics> list = cosmeticsServer.findAllGoods(id);
 
         return new JsonBean(1,list);
     }

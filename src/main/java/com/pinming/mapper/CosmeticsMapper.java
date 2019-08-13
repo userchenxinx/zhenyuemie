@@ -81,5 +81,5 @@ public interface CosmeticsMapper {
      * 通过多种条件进行查询
      * @return
      */
-    public List<Cosmetics> selectAllGoods();
+    public List<Cosmetics> selectAllGoods(int id);
 }

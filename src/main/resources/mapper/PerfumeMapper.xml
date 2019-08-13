@@ -43,7 +43,7 @@
         where b.id= #{id}
     </select>
 
-    <select id="selectAllGoods" resultType="com.pinming.pojo.Perfume" >
+    <select id="selectAllGoods" resultType="com.pinming.pojo.Perfume" parameterType="int">
         select c.*,b.efficacyname,s.typename,bt.brandname from c_skincare c
         inner join c_efficacytype b on c.efficacyid = b.id
         inner join c_brandtype bt on c.brandid = bt.id

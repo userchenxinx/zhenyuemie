@@ -78,5 +78,5 @@ public interface PerfumeServce {
      * 通过多种条件进行查询
      * @return
      */
-    public List<Perfume> findAllGoods();
+    public List<Perfume> findAllGoods(int id);
 }

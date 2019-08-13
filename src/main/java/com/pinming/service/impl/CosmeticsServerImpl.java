@@ -122,7 +122,7 @@ public class CosmeticsServerImpl implements CosmeticsServce {
     }
 
     @Override
-    public List<Cosmetics> findAllGoods() {
-        return cosmeticsMapper.selectAllGoods();
+    public List<Cosmetics> findAllGoods(int id) {
+        return cosmeticsMapper.selectAllGoods(id);
     }
 }
