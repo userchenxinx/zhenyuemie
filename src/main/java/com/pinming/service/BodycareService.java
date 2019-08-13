@@ -79,5 +79,5 @@ public interface BodycareService {
      * 通过多种条件进行查询
      * @return
      */
-    public List<Bodycare> findAllGoods(int id);
+    public List<Bodycare> findAllGoods(int efid, int brid, int skid);
 }

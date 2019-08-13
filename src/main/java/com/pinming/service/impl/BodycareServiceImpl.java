@@ -127,7 +127,7 @@ public class BodycareServiceImpl implements BodycareService {
     }
 
     @Override
-    public List<Bodycare> findAllGoods(int id) {
-        return bodycareMapper.selectAllGoods(id);
+    public List<Bodycare> findAllGoods(int efid, int brid, int skid) {
+        return bodycareMapper.selectAllGoods(efid,brid,skid);
     }
 }

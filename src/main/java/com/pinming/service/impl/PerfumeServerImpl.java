@@ -125,7 +125,7 @@ public class PerfumeServerImpl implements PerfumeServce {
      * @return
      */
     @Override
-    public List<Perfume> findAllGoods(int id) {
-        return perfumeMapper.selectAllGoods(id);
+    public List<Perfume> findAllGoods(int efid, int brid, int skid) {
+        return perfumeMapper.selectAllGoods(efid,brid,skid);
     }
 }

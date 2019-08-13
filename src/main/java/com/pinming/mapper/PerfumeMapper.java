@@ -81,5 +81,5 @@ public interface PerfumeMapper {
      * 通过多种条件进行查询
      * @return
      */
-    public List<Perfume> selectAllGoods(int id);
+    public List<Perfume> selectAllGoods(int efid, int brid, int skid);
 }
