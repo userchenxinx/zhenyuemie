@@ -92,4 +92,12 @@ public class PerfumeController {
         return new JsonBean(1,list);
     }
 
+    @RequestMapping(value = "/findall.do", method = RequestMethod.GET)
+    @ApiOperation(value = "该方法是通过多类型条件获取所有香氛信息的方法")
+    public JsonBean findgoodsAll(){
+        List<Perfume> list = perfumeServer.findAllGoods();
+
+        return new JsonBean(1,list);
+    }
+
 }
