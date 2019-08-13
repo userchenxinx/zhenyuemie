@@ -48,7 +48,7 @@
         inner join c_efficacytype b on c.efficacyid = b.id
         inner join c_brandtype bt on c.brandid = bt.id
         inner join c_skintype s on c.skintypeid = s.id
-        where b.id= #{id}
+        where c.id= #{id}
     </select>
 
 
