@@ -1,9 +1,6 @@
 package com.pinming.pojo;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-
-import java.util.Date;
-
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * @author: djs
@@ -11,16 +8,33 @@ import java.util.Date;
  **/
 public class User {
     private Integer id;
-    private String tel;
-    private String email;
-    private String password;
-    private Integer flag;
+    @ApiModelProperty(value = "昵称")
     private String nickname;
+    @ApiModelProperty(value = "姓名")
     private String rname;
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone="GMT+8")
-    private Date createtime;
+    @ApiModelProperty(value = "头像地址")
     private String imgpath;
-    private String code;
+    @ApiModelProperty(value = "联系方式")
+    private String tel;
+    @ApiModelProperty(value = "登陆者id")
+    private Integer aid;
+    //private Admin admin;
+
+    /*public Admin getAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(Admin admin) {
+        this.admin = admin;
+    }*/
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getNickname() {
         return nickname;
@@ -38,36 +52,12 @@ public class User {
         this.rname = rname;
     }
 
-    public Date getCreatetime() {
-        return createtime;
-    }
-
-    public String getCode() {
-        return code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
-    }
-
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
-    }
-
     public String getImgpath() {
         return imgpath;
     }
 
     public void setImgpath(String imgpath) {
         this.imgpath = imgpath;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     public String getTel() {
@@ -78,45 +68,11 @@ public class User {
         this.tel = tel;
     }
 
-    public String getEmail() {
-        return email;
+    public Integer getAid() {
+        return aid;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setAid(Integer aid) {
+        this.aid = aid;
     }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public Integer getFlag() {
-        return flag;
-    }
-
-    public void setFlag(Integer flag) {
-        this.flag = flag;
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", tel='" + tel + '\'' +
-                ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
-                ", flag=" + flag +
-                ", nickname='" + nickname + '\'' +
-                ", rname='" + rname + '\'' +
-                ", createtime=" + createtime +
-                ", imgpath='" + imgpath + '\'' +
-                ", code='" + code + '\'' +
-                '}';
-    }
-
-
 }

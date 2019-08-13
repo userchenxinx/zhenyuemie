@@ -1,16 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.pinming.mapper.UserMapper">
-
-    <select id="login" parameterType="user" resultType="integer">
-        SELECT count(1) FROM user where email = #{email} and password = #{password}
-    </select>
-
-    <select id="findUserByEmail" parameterType="string" resultType="com.pinming.pojo.User">
-        select * from user where email = #{email}
-    </select>
-
+    <resultMap id="userMap" type="com.pinming.pojo.User">
+        <id property="id" column="id"/>
+        <result property="tel" column="tel"/>
+        <result property="aid" column="aid"/>
+        <result property="imgpath" column="imgpath"/>
+        <result property="nickname" column="nickname"/>
+        <result property="rname" column="rname"/>
+    </resultMap>
     <insert id="addUser" parameterType="user">
-        insert into user(id,email,password,createtime) values(null,#{email},#{password},#{createtime})
+        insert into user (id,nickname,rname,tel,aid) values (#{id},#{nickname},#{rname},#{tel},#{aid})
     </insert>
+
+    <select id="findUserById" parameterType="integer" resultType="integer">
+        select count(1) from user where aid = #{id}
+    </select>
+
+    <update id="updateUserDetail" parameterType="user">
+        update user set
+        nickname = #{nickname},
+        rname = #{rname},
+        tel = #{tel}
+        where aid = #{id}
+    </update>
 </mapper>

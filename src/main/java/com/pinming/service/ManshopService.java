@@ -1,9 +1,6 @@
 package com.pinming.service;
 
 import com.pinming.common.vo.R;
-import com.pinming.pojo.Mshopdeta;
-
-import java.util.List;
 
 public interface ManshopService {
 
@@ -15,6 +12,10 @@ public interface ManshopService {
 
     R selectAll();
 
-    //条件查询
-    List<Mshopdeta> findByType(String goodsname);
+    R selectFtypeId(int id);
+
+    R selectTime(int ftypeid);
+
+    R selectPrice(int ftypeid);
+
 }

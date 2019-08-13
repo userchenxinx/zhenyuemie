@@ -5,14 +5,13 @@ import org.apache.ibatis.annotations.Mapper;
 
 /**
  * @author: djs
- * @create: 2019-08-02 22:34
+ * @create: 2019-08-11 13:28
  **/
 @Mapper
 public interface UserMapper {
-
-    Integer login(String email,String password);
-
-    User findUserByEmail(String email);
-
     void addUser(User user);
+
+    Integer findUserById(Integer id);
+
+    void updateUserDetail(User user);
 }

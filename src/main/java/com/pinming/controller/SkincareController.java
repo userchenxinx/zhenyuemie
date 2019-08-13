@@ -36,7 +36,7 @@ public class SkincareController {
     @RequestMapping(value = "/query.do", method = RequestMethod.GET)
     @ApiOperation(value = "该方法是通过指定id获取所有护肤品信息的方法")
     public JsonBean findById(int id){
-        List<Skincare> list = skincareService.findSkincareById(id);
+        Skincare list = skincareService.findSkincareById(id);
 
         return new JsonBean(1, list);
     }

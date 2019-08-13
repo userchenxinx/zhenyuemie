@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pinming.mapper.AaddressMapper">
+  <resultMap id="BaseResultMap" type="com.pinming.pojo.Aaddress">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="consignee" jdbcType="VARCHAR" property="consignee" />
+    <result column="tel" jdbcType="VARCHAR" property="tel" />
+    <result column="areaid" jdbcType="INTEGER" property="areaid" />
+    <result column="detaaddress" jdbcType="VARCHAR" property="detaaddress" />
+    <result column="postalcode" jdbcType="INTEGER" property="postalcode" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, consignee, tel, areaid, detaaddress, postalcode
+  </sql>
+  <select id="findArea" resultType="com.pinming.model.Adds">
+    select p.province, c.city,a.area,a.id FROM aprovince p
+    INNER join acity c
+    on c.provinceid=p.id
+    INNER JOIN aarea a
+    on a.cityid=c.id
+    where p.id=#{id}
+  </select>
+  <select id="findAllAddr" resultType="com.pinming.model.AddressVG">
+    select d.consignee,d.tel,p.province,c.city,a.area,d.detaaddress,d.postalcode FROM aprovince p
+      INNER join acity c
+      on c.provinceid=p.id
+      INNER JOIN aarea a
+      on a.cityid=c.id
+      inner JOIN aaddress d
+      on d.areaid=a.id
+  </select>
+  <insert id="addAddr"  parameterType="aaddress" >
+    insert into aaddress values (null, #{consignee},#{tel},#{areaid}, #{detaaddress},#{postalcode})
+  </insert>
+
+  <delete id="delectAddr" parameterType="int">
+   delete  from aaddress where id=#{id}
+ </delete>
+
+
+  <select id="findById" parameterType="int" resultType="aaddress">
+    select * from aaddress where id=#{id}
+  </select>
+
+  <update id="update" parameterType="aaddress">
+    update aaddress set consignee=#{consignee},tel=#{tel},areaid=#{areaid},detaaddress=#{detaaddress},postalcode=#{postalcode} where id=#{id}
+  </update>
+</mapper>

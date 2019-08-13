@@ -36,7 +36,7 @@ public interface SkincareMapper {
      * @param id
      * @return
      */
-    public List<Skincare> findById(int id);
+    public Skincare findById(int id);
 
     /**
      * 通过肤质类型进行查询

@@ -16,25 +16,4 @@
     on mf.mtid=mt.id
     where m.id=#{id}
   </select>
-
-
-
-<!--全文搜索商品-->
-  <select id="findByType" parameterType="string" resultType="com.pinming.pojo.Mshopdeta">
-    SELECT * FROM mshopdeta
-    <where>
-      <if test="goodsname != null">
-        OR goodsname LIKE '%${goodsname}%'
-      </if>
-      <if test="goodsname != null">
-        OR category LIKE '%${category}%'
-      </if>
-      <if test="goodsname != null">
-        OR wordtype LIKE '%${wordtype}%'
-      </if>
-
-  </where>
-
-  </select>
-
 </mapper>

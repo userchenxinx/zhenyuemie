@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pinming.mapper.AdminMapper">
+    <resultMap id="adminMap" type="com.pinming.pojo.Admin">
+        <id property="id" column="id"/>
+        <result property="password" column="password"/>
+        <result property="flag" column="flag"/>
+        <result property="email" column="email"/>
+        <result property="code" column="code"/>
+        <result property="createtime" column="createtime"/>
+        <result property="logintime" column="logintime"/>
+    </resultMap>
+    <select id="login" parameterType="admin" resultType="integer">
+        select count(1) from admin where email = #{email} and password =#{password}
+    </select>
+
+    <select id="findAdminByEmail" parameterType="string" resultMap="adminMap">
+        select * from admin where email = #{email}
+    </select>
+
+    <insert id="addAdmin" parameterType="admin" >
+        insert into admin (id,password,flag,email,code,createtime,logintime) values
+        (#{id},#{password},#(flag),#{email},#{code},#{createtime},#{logintime})
+    </insert>
+
+    <select id="findById" parameterType="integer" resultMap="adminMap">
+        select * from admin where id = #{id}
+    </select>
+</mapper>

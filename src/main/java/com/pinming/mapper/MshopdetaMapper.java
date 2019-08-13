@@ -17,8 +17,21 @@ public interface MshopdetaMapper {
     List<Mshopdeta> findAllShop();
     // 根据ftype的id展示商品
     List<MshopTyptV> selectTypeId (int id);
-
     // 根据更新时间进行排序
+    List<Mshopdeta> selectTime(int ftypeid);
 
-    List<Mshopdeta> findByType(String goodsname);
+    // 根据价格进行排序
+    List<Mshopdeta> selectPrice(int ftypeid);
+    // 首页展示世界大牌图片
+    List<Mshopdeta> selectNFtype(String wordname);
+    //首页展示通过图片查看商品
+    List<Mshopdeta> selectImg(String img);
+
+    // 导购精选
+    List<Mshopdeta> selection();
+
+    //血拼一下根据折扣价进行显示
+    List<MshopTyptV> selectDiscount();
+
+    // 最热榜单商品
 }

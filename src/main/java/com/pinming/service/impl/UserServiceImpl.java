@@ -8,7 +8,8 @@ import org.springframework.stereotype.Service;
 
 /**
  * @author: djs
- * @create: 2019-08-02 22:38
+ * @program: zhenyuemie
+ * @create: 2019-08-11 13:26
  **/
 @Service
 public class UserServiceImpl implements UserService {
@@ -16,22 +17,18 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserMapper userMapper;
     @Override
-    public boolean login(String email, String password) {
-        Integer i = userMapper.login(email, password);
-
-        return i>0 ? true:false;
-    }
-
-    @Override
-    public User findUserByEmail(String email) {
-        User user = userMapper.findUserByEmail(email);
-        return user;
-    }
-
-    @Override
     public void addUser(User user) {
         userMapper.addUser(user);
     }
 
+    @Override
+    public Integer findUserById(Integer id) {
+        Integer i = userMapper.findUserById(id);
+        return i;
+    }
 
+    @Override
+    public void updateUserDetail(User user) {
+        userMapper.updateUserDetail(user);
+    }
 }

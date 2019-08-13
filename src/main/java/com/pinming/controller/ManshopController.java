@@ -1,19 +1,17 @@
 package com.pinming.controller;
 
-import com.pinming.common.util.JsonBean;
+import com.github.pagehelper.Page;
 import com.pinming.common.vo.R;
-import com.pinming.pojo.Mshopdeta;
+import com.pinming.model.MshopTyptV;
 import com.pinming.service.ManshopService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseBody;
-
-import java.util.List;
 
 
 @Controller
@@ -54,13 +52,27 @@ public class ManshopController {
         return manshopService.selectAll();
     }
 
-    @ApiOperation(value = "全文搜索商品")
+    //查看ftype类型下所有的商品
+    @ApiOperation(value = "展示ftype类型下所有商品",notes = "展示ftype类型下所有商品")
     @ResponseBody
-    @GetMapping("/manlist/search.do")
-    public JsonBean findByType(String goodsname, Model model){
-
-        List<Mshopdeta> list = manshopService.findByType(goodsname);
-        model.addAttribute("list",list);
-        return new JsonBean(1,list);
+    @GetMapping("/manlist/ftypeidlist.do")
+    public R selectTypeId(int id){
+        return manshopService.selectFtypeId(id);
     }
+    //根据时间进行商品排序
+    @ApiOperation(value = "根据时间进行商品排序",notes = "根据时间进行商品排序")
+    @ResponseBody
+    @GetMapping("/manlist/time.do")
+    public R selectTime(int ftypeid){
+        return manshopService.selectTime(ftypeid);
+    }
+
+    //根据价格进行商品排序
+    @ApiOperation(value = "根据价格进行商品排序",notes = "根据价格进行商品排序")
+    @ResponseBody
+    @GetMapping("/manlist/price.do")
+    public R selectPrice(int ftypeid){
+        return manshopService.selectPrice(ftypeid);
+    }
+
 }
